@@ -27,7 +27,7 @@ import {
   sha256,
 } from '../../util/utils';
 import { getBlockRecord, getBlock } from '../../modules/fullnodeMessages';
-import { mojo_to_tranzact } from '../../util/tranzact';
+import { toto_to_tranzact } from '../../util/tranzact';
 import {
   calculatePoolReward,
   calculateBaseFarmerReward,
@@ -171,13 +171,13 @@ export default function Block() {
       ? blockRecord.weight - prevBlockRecord.weight
       : blockRecord?.weight ?? 0;
 
-  const poolReward = mojo_to_tranzact(calculatePoolReward(blockRecord.height));
-  const baseFarmerReward = mojo_to_tranzact(
+  const poolReward = toto_to_tranzact(calculatePoolReward(blockRecord.height));
+  const baseFarmerReward = toto_to_tranzact(
     calculateBaseFarmerReward(blockRecord.height),
   );
 
   const tranzactFees = blockRecord.fees
-    ? mojo_to_tranzact(BigInt(blockRecord.fees))
+    ? toto_to_tranzact(BigInt(blockRecord.fees))
     : '';
 
   const rows = [

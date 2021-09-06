@@ -42,7 +42,7 @@ import {
   send_transaction,
   farm_block,
 } from '../../../modules/message';
-import { /* mojo_to_tranzact_string, */ tranzact_to_mojo } from '../../../util/tranzact';
+import { /* toto_to_tranzact_string, */ tranzact_to_toto } from '../../../util/tranzact';
 import { openDialog } from '../../../modules/dialog';
 import { get_transaction_result } from '../../../util/transaction_result';
 import config from '../../../config/config';
@@ -238,7 +238,7 @@ function BalanceCardSubSection(props: BalanceCardSubSectionProps) {
         </Box>
         <Box>
           <Typography variant="subtitle1">
-            {mojo_to_tranzact_string(props.balance)} {currencyCode}
+            {toto_to_tranzact_string(props.balance)} {currencyCode}
           </Typography>
         </Box>
       </Box>
@@ -470,8 +470,8 @@ function SendCard(props: SendCardProps) {
       address = address.slice(2);
     }
 
-    const amountValue = Number.parseFloat(tranzact_to_mojo(amount));
-    const feeValue = Number.parseFloat(tranzact_to_mojo(fee));
+    const amountValue = Number.parseFloat(tranzact_to_toto(amount));
+    const feeValue = Number.parseFloat(tranzact_to_toto(fee));
 
     dispatch(send_transaction(wallet_id, amountValue, feeValue, address));
 

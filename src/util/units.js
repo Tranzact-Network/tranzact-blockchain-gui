@@ -1,12 +1,12 @@
 const units = {
   tranzact: 1,
-  mojo: 1 / 1e12,
+  toto: 1 / 1e12,
   colouredcoin: 1 / 1e9,
 };
 
 const aliases = {
   tranzact: ['ch', 'tranzact', 'Tranzact'],
-  mojo: ['mj', 'mojo'],
+  toto: ['mj', 'toto'],
   colouredcoin: ['cc', 'colouredcoin'],
 };
 
@@ -15,7 +15,7 @@ const display = {
     format: '{amount} CH',
     fractionDigits: 12,
   },
-  mojo: {
+  toto: {
     format: '{amount} MJ',
     fractionDigits: 0,
   },

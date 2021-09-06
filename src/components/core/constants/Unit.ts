@@ -1,6 +1,6 @@
 enum Unit {
-  TRNAZACT = 'TRNAZACT',
-  MOJO = 'MOJO',
+  TRANZACT = 'TRANZACT',
+  TOTO = 'TOTO',
   COLOURED_COIN = 'COLOUREDCOIN',
 }
 

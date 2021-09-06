@@ -12,10 +12,10 @@ global.key_path = 'config/ssl/daemon/private_daemon.key';
 
 function loadConfig(net) {
   try {
-    // check if TRNAZACT_ROOT is set. it overrides 'net'
+    // check if TRANZACT_ROOT is set. it overrides 'net'
     const config_root_dir =
-      'TRNAZACT_ROOT' in process.env
-        ? process.env.TRNAZACT_ROOT
+      'TRANZACT_ROOT' in process.env
+        ? process.env.TRANZACT_ROOT
         : path.join(os.homedir(), '.tranzact', net);
     const config = yaml.load(
       fs.readFileSync(path.join(config_root_dir, 'config/config.yaml'), 'utf8'),

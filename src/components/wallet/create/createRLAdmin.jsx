@@ -20,7 +20,7 @@ import {
 } from '../../../modules/createWallet';
 import { useStyles } from './WalletCreate';
 import { create_rl_admin_action } from '../../../modules/message';
-import { tranzact_to_mojo } from '../../../util/tranzact';
+import { tranzact_to_toto } from '../../../util/tranzact';
 import { openDialog } from '../../../modules/dialog';
 
 export const customStyles = makeStyles((theme) => ({
@@ -156,12 +156,12 @@ export const CreateRLAdminWallet = () => {
     dispatch(createState(true, true));
     const interval = interval_input.value;
     const interval_value = Number.parseInt(Number(interval));
-    const tranzactper = tranzact_to_mojo(tranzactper_input.value);
+    const tranzactper = tranzact_to_toto(tranzactper_input.value);
     const tranzactper_value = Number.parseInt(Number(tranzactper));
     const userpubkey = userpubkey_input.value;
-    const amount = tranzact_to_mojo(amount_input.value);
+    const amount = tranzact_to_toto(amount_input.value);
     const amount_value = Number.parseInt(Number(amount));
-    // var fee = tranzact_to_mojo(fee_input.value);
+    // var fee = tranzact_to_toto(fee_input.value);
     // TODO(lipa): send fee to server
     // const fee_value = parseInt(Number(fee));
     dispatch(

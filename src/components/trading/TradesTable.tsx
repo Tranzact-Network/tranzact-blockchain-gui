@@ -3,7 +3,7 @@ import { Table } from '@tranzact/core';
 import styled from 'styled-components';
 import { Trans } from '@lingui/macro';
 import { Box } from '@material-ui/core';
-import { mojo_to_tranzact_string } from '../../util/tranzact';
+import { toto_to_tranzact_string } from '../../util/tranzact';
 
 const Amount = styled(Box)`
   white-space: normal;
@@ -46,7 +46,7 @@ export default function TradesTable(props: Props) {
         return {
           side: amount < 0 ? <Trans>Sell</Trans> : <Trans>Buy</Trans>,
           name: <Amount>{name}</Amount>,
-          amount: <Amount>{mojo_to_tranzact_string(humanAmount)}</Amount>,
+          amount: <Amount>{toto_to_tranzact_string(humanAmount)}</Amount>,
         };
       }),
     [rows],

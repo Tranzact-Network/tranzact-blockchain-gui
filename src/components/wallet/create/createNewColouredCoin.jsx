@@ -20,7 +20,7 @@ import {
 } from '../../../modules/createWallet';
 import { useStyles } from './WalletCreate';
 import { create_cc_action } from '../../../modules/message';
-import { tranzact_to_mojo } from '../../../util/tranzact';
+import { tranzact_to_toto } from '../../../util/tranzact';
 import { openDialog } from '../../../modules/dialog';
 
 export const customStyles = makeStyles((theme) => ({
@@ -83,8 +83,8 @@ export const CreateNewCCWallet = () => {
       return;
     }
     dispatch(createState(true, true));
-    const amount = tranzact_to_mojo(amount_input.value);
-    const fee = tranzact_to_mojo(fee_input.value);
+    const amount = tranzact_to_toto(amount_input.value);
+    const fee = tranzact_to_toto(fee_input.value);
     dispatch(create_cc_action(amount, fee));
   }
 

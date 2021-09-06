@@ -7,8 +7,8 @@ describe('units', () => {
 
       expect(result).toBe(1);
     });
-    it('gets unit of mojo', () => {
-      const result = units.getUnit('mojo');
+    it('gets unit of toto', () => {
+      const result = units.getUnit('toto');
 
       expect(result).toBe(1e-12);
     });
@@ -18,7 +18,7 @@ describe('units', () => {
       expect(result).toBe(1e-9);
     });
     it('supports uppercase characters', () => {
-      const result = units.getUnit('TRNAZACT');
+      const result = units.getUnit('TRANZACT');
 
       expect(result).toBe(1);
     });
@@ -27,7 +27,7 @@ describe('units', () => {
 
       expect(result).toBe(1);
     });
-    it('gets unit of mojo using alias', () => {
+    it('gets unit of toto using alias', () => {
       const result = units.getUnit('mj');
 
       expect(result).toBe(1e-12);
@@ -54,8 +54,8 @@ describe('units', () => {
         fractionDigits: 12,
       });
     });
-    it('gets display of mojo', () => {
-      const result = units.getDisplay('mojo');
+    it('gets display of toto', () => {
+      const result = units.getDisplay('toto');
 
       expect(result).toEqual({
         format: '{amount} MJ',

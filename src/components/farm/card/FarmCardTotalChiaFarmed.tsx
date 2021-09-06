@@ -3,7 +3,7 @@ import { Trans } from '@lingui/macro';
 import { useSelector } from 'react-redux';
 import type { RootState } from '../../../modules/rootReducer';
 import FarmCard from './FarmCard';
-import { mojo_to_tranzact } from '../../../util/tranzact';
+import { toto_to_tranzact } from '../../../util/tranzact';
 import useCurrencyCode from '../../../hooks/useCurrencyCode';
 
 export default function FarmCardTotalTranzactFarmed() {
@@ -20,7 +20,7 @@ export default function FarmCardTotalTranzactFarmed() {
   const totalTranzactFarmed = useMemo(() => {
     if (farmedAmount !== undefined) {
       const val = BigInt(farmedAmount.toString());
-      return mojo_to_tranzact(val);
+      return toto_to_tranzact(val);
     }
   }, [farmedAmount]);
 

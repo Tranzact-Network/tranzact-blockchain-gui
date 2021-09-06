@@ -16,14 +16,14 @@ function getInstallerConfig () {
   return Promise.resolve({
     appDirectory: path.join(rootPath, 'Tranzact-win32-x64'),
     authors: 'Tranzact Network',
-    version: process.env.TRNAZACT_INSTALLER_VERSION,
+    version: process.env.TRANZACT_INSTALLER_VERSION,
     noMsi: true,
     iconUrl: 'https://raw.githubusercontent.com/Tranzact-Network/tranzact-blockchain/master/electron-react/src/assets/img/tranzact.ico',
     outputDirectory: path.join(outPath, 'windows-installer'),
     certificateFile: 'win_code_sign_cert.p12',
     certificatePassword: process.env.WIN_CODE_SIGN_PASS,
     exe: 'Tranzact.exe',
-    setupExe: 'TranzactSetup-' + process.env.TRNAZACT_INSTALLER_VERSION + '.exe',
+    setupExe: 'TranzactSetup-' + process.env.TRANZACT_INSTALLER_VERSION + '.exe',
     setupIcon: path.join(rootPath, 'src', 'assets', 'img', 'tranzact.ico')
   })
 }

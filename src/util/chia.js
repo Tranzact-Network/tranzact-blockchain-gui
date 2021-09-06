@@ -83,32 +83,32 @@ tranzact_formatter.setFiat = (currency, rate, display = null) => {
   units.setUnit(currency, 1 / rate, display);
 };
 
-export const mojo_to_tranzact = (mojo) => {
-  return tranzact_formatter(Number.parseInt(mojo), 'mojo').to('tranzact').value();
+export const toto_to_tranzact = (toto) => {
+  return tranzact_formatter(Number.parseInt(toto), 'toto').to('tranzact').value();
 };
 
-export const tranzact_to_mojo = (tranzact) => {
+export const tranzact_to_toto = (tranzact) => {
   return tranzact_formatter(Number.parseFloat(Number(tranzact)), 'tranzact')
-    .to('mojo')
+    .to('toto')
     .value();
 };
 
-export const mojo_to_tranzact_string = (mojo) => {
-  return tranzact_formatter(Number(mojo), 'mojo').to('tranzact').toString();
+export const toto_to_tranzact_string = (toto) => {
+  return tranzact_formatter(Number(toto), 'toto').to('tranzact').toString();
 };
 
-export const mojo_to_colouredcoin = (mojo) => {
-  return tranzact_formatter(Number.parseInt(mojo), 'mojo')
+export const toto_to_colouredcoin = (toto) => {
+  return tranzact_formatter(Number.parseInt(toto), 'toto')
     .to('colouredcoin')
     .value();
 };
 
-export const colouredcoin_to_mojo = (colouredcoin) => {
+export const colouredcoin_to_toto = (colouredcoin) => {
   return tranzact_formatter(Number.parseFloat(Number(colouredcoin)), 'colouredcoin')
-    .to('mojo')
+    .to('toto')
     .value();
 };
 
-export const mojo_to_colouredcoin_string = (mojo) => {
-  return tranzact_formatter(Number(mojo), 'mojo').to('colouredcoin').toString();
+export const toto_to_colouredcoin_string = (toto) => {
+  return tranzact_formatter(Number(toto), 'toto').to('colouredcoin').toString();
 };
