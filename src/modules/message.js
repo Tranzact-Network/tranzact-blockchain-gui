@@ -474,6 +474,13 @@ export const farm_block = (address) => {
   return action;
 };
 
+export const add_nft_address = (wallet_id, launcher_id, pool_contract_address) => {
+  const action = walletMessage();
+  action.message.command = 'add_nft_address';
+  action.message.data = { wallet_id,  launcher_id, pool_contract_address };
+  return action;
+};
+
 export const get_height_info = () => {
   const action = walletMessage();
   action.message.command = 'get_height_info';

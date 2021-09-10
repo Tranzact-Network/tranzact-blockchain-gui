@@ -41,6 +41,7 @@ import {
   get_address,
   send_transaction,
   farm_block,
+  add_nft_address
 } from '../../../modules/message';
 import { /* toto_to_tranzact_string, */ tranzact_to_toto } from '../../../util/tranzact';
 import { openDialog } from '../../../modules/dialog';
@@ -161,6 +162,9 @@ const useStyles = makeStyles((theme) => ({
     }),
   },
   sendCard: {
+    marginTop: theme.spacing(2),
+  },
+  nftCard: {
     marginTop: theme.spacing(2),
   },
   sendButton: {
@@ -356,11 +360,165 @@ type SendCardProps = {
   wallet_id: number;
 };
 
+type NftCardProps = {
+  wallet_id: number;
+};
+
 type SendTransactionData = {
   address: string;
   amount: string;
   fee: string;
 };
+
+type SendNftData = {
+  launcher_id: string;
+  pool_contract_address: string;
+  wallet_id: string;
+};
+
+function NftCard(props: NftCardProps) {
+  const { wallet_id } = props;
+  const classes = useStyles();
+  const dispatch = useDispatch();
+
+  const methods = useForm<SendNftData>({
+    shouldUnregister: false,
+    defaultValues: {
+      launcher_id: '',
+      pool_contract_address: '',
+      wallet_id: ''
+    },
+  });
+
+  const launcherIdValue = useWatch<string>({
+    control: methods.control,
+    name: 'launcher_id',
+  });
+
+  const PoolContractAddressValue = useWatch<string>({
+    control: methods.control,
+    name: 'pool_contract_address',
+  });
+
+  const syncing = useSelector(
+    (state: RootState) => state.wallet_state.status.syncing,
+  );
+
+  const wallet = useSelector((state: RootState) =>
+    state.wallet_state.wallets?.find((item) => item.id === wallet_id),
+  );
+
+  if (!wallet) {
+    return null;
+  }
+
+  const { sending_transaction, send_transaction_result } = wallet;
+
+  const result = get_transaction_result(send_transaction_result);
+
+  const result_message = result.message;
+  const result_class = result.success
+    ? classes.resultSuccess
+    : classes.resultFailure;
+
+
+  function handleSubmit(data: SendNftData) {
+    if (sending_transaction) {
+      return;
+    }
+
+    if (syncing) {
+      dispatch(
+        openDialog(
+          <AlertDialog>
+            <Trans>Please finish syncing before adding an off chain NFT</Trans>
+          </AlertDialog>,
+        ),
+      );
+      return;
+    }
+
+    const launcher_id = data.launcher_id.trim();
+    if (!launcher_id) {
+      dispatch(
+        openDialog(
+          <AlertDialog>
+            <Trans>Please enter a valid launcher id</Trans>
+          </AlertDialog>,
+        ),
+      );
+      return;
+    }
+
+    const pool_contract_address = data.pool_contract_address.trim();
+    if (!pool_contract_address) {
+      dispatch(
+        openDialog(
+          <AlertDialog>
+            <Trans>Please enter a valid pool contract address</Trans>
+          </AlertDialog>,
+        ),
+      );
+      return;
+    }
+
+    dispatch(add_nft_address(launcherIdValue, PoolContractAddressValue, wallet_id));
+
+    methods.reset();
+  }
+
+  return (
+    <Card
+      title={<Trans>Claim Off Chain NFT</Trans>}
+      tooltip={
+        <Trans>
+          On average there is one minute between each transaction block. Unless
+          there is congestion you can expect your transaction to be included in
+          less than a minute.
+        </Trans>
+      }
+    >
+      {result_message && <p className={result_class}>{result_message}</p>}
+
+      <Form methods={methods} onSubmit={handleSubmit}>
+        <Grid spacing={2} container>
+          <Grid xs={12} item>
+            <TranzactTextField
+              name="launcher_id"
+              variant="filled"
+              color="secondary"
+              fullWidth
+              disabled={sending_transaction}
+              label={<Trans>Launcher ID</Trans>}
+            />
+          </Grid>
+          <Grid xs={12} item>
+            <TranzactTextField
+              name="pool_contract_address"
+              variant="filled"
+              color="secondary"
+              fullWidth
+              disabled={sending_transaction}
+              label={<Trans>Pool Contract Address</Trans>}
+            />
+          </Grid>
+          <Grid xs={12} item>
+            <Flex justifyContent="flex-end" gap={1}>
+              <Button
+                variant="contained"
+                color="primary"
+                type="submit"
+                disabled={sending_transaction}
+              >
+                <Trans>Add Off Chain NFT</Trans>
+              </Button>
+            </Flex>
+          </Grid>
+        </Grid>
+      </Form>
+    </Card>
+  );
+}
 
 function SendCard(props: SendCardProps) {
   const { wallet_id } = props;
@@ -682,6 +840,7 @@ export default function StandardWallet(props: StandardWalletProps) {
 
       <Flex flexDirection="column" gap={3}>
         <WalletCards wallet_id={wallet_id} />
+        <NftCard wallet_id={wallet_id} />
         <SendCard wallet_id={wallet_id} />
         <AddressCard wallet_id={wallet_id} />
         <WalletHistory walletId={wallet_id} />
