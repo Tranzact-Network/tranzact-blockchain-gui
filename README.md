@@ -1,5 +1,5 @@
 # tranzact-blockchain
-![Alt text](https:/tranzact.network/images/logo.png)
+![Alt text](https://tranzact.network/images/logo.png)
 
 Please check out the [wiki](https://github.com/Tranzact-Network/tranzact-blockchain/wiki)
 and [FAQ](https://github.com/Tranzact-Network/tranzact-blockchain/wiki/FAQ) for
