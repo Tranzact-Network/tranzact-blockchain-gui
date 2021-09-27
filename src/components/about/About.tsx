@@ -70,7 +70,7 @@ const Spacer = styled.div`
   margin-bottom: 1rem;
 `;
 
-const url = 'https://tranzact.net';
+const url = 'https://tranzact.network';
 
 type Props = {
   version: string;

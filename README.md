@@ -1,7 +1,5 @@
 # tranzact-blockchain
-![Alt text](https://www.tranzact.net/img/tranzact_logo.svg)
-
-![GitHub contributors](https://img.shields.io/github/contributors/Tranzact-Network/tranzact-blockchain?logo=GitHub)
+![Alt text](https:/tranzact.network/images/logo.png)
 
 Please check out the [wiki](https://github.com/Tranzact-Network/tranzact-blockchain/wiki)
 and [FAQ](https://github.com/Tranzact-Network/tranzact-blockchain/wiki/FAQ) for

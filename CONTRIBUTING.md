@@ -6,20 +6,18 @@ We are happy that you are taking a look at the code for Tranzact, a proof of spa
 A lot of fascinating new cryptography and blockchain concepts are used and implemented here.
 This repo includes the code for the Tranzact GUI in electron/react and TypeScript.
 
-It is an input to the [tranzact-blockchain](https://github.com/Tranzact-Network/tranzact-blockchain) repository which also includes a verifiable delay function implementation that it imports from the [tranzactvdf repo](https://github.com/Tranzact-Network/tranzactvdf) (in c/c++), and a proof of space implementation that it imports from the [tranzactpos repo](https://github.com/Tranzact-Network/tranzactpos). BLS signatures are imported from the [bls-signatures repo](https://github.com/Tranzact-Network/bls-signatures) as blspy. There is an additional dependency on the [tranzactbip158 repo](https://github.com/Tranzact-Network/tranzactbip158).
+It is an input to the [tranzact-blockchain](https://github.com/Tranzact-Network/tranzact-blockchain) repository which also includes a verifiable delay function implementation that it imports from the [tranzactvdf repo](https://github.com/Chia-Network/chiavdf) (in c/c++), and a proof of space implementation that it imports from the [chiapos repo](https://github.com/Chia-Network/chiapos). BLS signatures are imported from the [bls-signatures repo](https://github.com/Chia-Network/bls-signatures) as blspy. There is an additional dependency on the [tranzactbip158 repo](https://github.com/Chia-Network/chiabip158).
 For major platforms, binary and source wheels are shipped to PyPI from each dependent repo and then tranzact-blockchain can pip install those from PyPI or they can be prepackaged as is done for the Windows and MacOS installer. On unsupported platforms, pip will fall back to the source distributions to be compiled locally.
-
-If you want to learn more about this project, read the [wiki](https://github.com/Tranzact-Network/tranzact-blockchain/wiki), or check out the [green paper](https://www.tranzact.net/assets/TranzactGreenPaper.pdf).
 
 ## Contributions
 
 We would be pleased to accept code contributions to this project.
 As we are in the alpha stage, the main priority is getting a robust blockchain up and running, with as many of the mainnet features as possible.
-You can visit our [Trello project board](https://trello.com/b/ZuNx7sET) to get a sense of what is in the backlog.
+You can visit our [Trello project board](https://trello.com/b/8YkjKldb) to get a sense of what is in the backlog.
 Generally things to the left are in progress or done. Some things go through "Coming up soon" but some will come directly out of other columns.
 Usually the things closer to the top of each column are the ones that will be worked on soonest.
 If you are interested in cryptography, math, or just like hacking in python, there are many interesting problems to work on.
-Contact any of the team members on [Keybase](https://keybase.io/team/tranzact_network.public), which we use as the main communication method and you can comment on any Trello card.
+Contact any of the team members on [Discord](https://discord.gg/r2HGpA73EU), which we use as the main communication method and you can comment on any Trello card.
 
 ## Run tests and linting
 

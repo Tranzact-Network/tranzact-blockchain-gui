@@ -7,7 +7,7 @@ import {
   AlertDialog,
   Flex,
   Card,
-} from '@chia/core';
+} from '@tranzact/core';
 import {
   Grid,
   Typography,
