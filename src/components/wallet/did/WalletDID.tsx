@@ -613,7 +613,7 @@ const BalanceCardSubSection = (props) => {
         </Box>
         <Box>
           <Typography variant="subtitle1">
-            {toto_to_tranzact_string(props.balance)} TXCH
+            {toto_to_tranzact_string(props.balance)} TTRZ
           </Typography>
         </Box>
       </Box>
