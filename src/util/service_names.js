@@ -4,7 +4,7 @@ export const service_farmer = 'tranzact_farmer';
 export const service_harvester = 'tranzact_harvester';
 export const service_simulator = 'tranzact_full_node_simulator';
 export const service_daemon = 'daemon';
-export const service_plotter = 'tranzact plots create';
+export const service_plotter = 'tranzact_plotter';
 
 // Corresponds with outbound_message.py NodeTypes
 export const service_connection_types = {
