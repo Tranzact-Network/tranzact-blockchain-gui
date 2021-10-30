@@ -724,7 +724,7 @@ msgstr ""
 #~ msgstr "سيؤدي حذف المفتاح إلى إزالة المفتاح بشكل دائم من جهاز الكمبيوتر الخاص بك، تأكد من أن لديك نسخ احتياطية. هل أنت متأكد من أنك تريد المتابعة؟"
 
 #: src/components/plot/add/PlotAddChoosePlotter.tsx:107
-msgid "Depending on your system configuration, you may find that an alternative plotter produces plots faster than the default Chia Proof of Space plotter. If unsure, use the default Chia Proof of Space plotter."
+msgid "Depending on your system configuration, you may find that an alternative plotter produces plots faster than the default Tranzact Proof of Space plotter. If unsure, use the default Tranzact Proof of Space plotter."
 msgstr ""
 
 #: src/electron/main.tsx:313
@@ -844,7 +844,7 @@ msgstr "خطأ"
 
 #: src/components/wallet/standard/WalletStandard.tsx:450
 msgid "Error: Cannot send tranzact to coloured address. Please enter a tranzact address."
-msgstr "خطأ: لا يمكن إرسال chia إلى عنوان العملات الملونة. الرجاء إدخال عنوان tranzact."
+msgstr "خطأ: لا يمكن إرسال tranzact إلى عنوان العملات الملونة. الرجاء إدخال عنوان tranzact."
 
 #: src/components/fullNode/card/FullNodeEstimatedNetworkSpace.tsx:20
 msgid "Estimated Network Space"
@@ -2998,7 +2998,7 @@ msgstr ""
 #: src/components/app/AppKeyringMigrator.tsx:177
 #: src/components/settings/ChangePassphrasePrompt.tsx:227
 #: src/components/settings/SetPassphrasePrompt.tsx:197
-msgid "Your passphrase can be stored in your system's secure credential store. Chia will be able to access your keys without prompting for your passphrase."
+msgid "Your passphrase can be stored in your system's secure credential store. Tranzact will be able to access your keys without prompting for your passphrase."
 msgstr ""
 
 #: src/components/settings/Settings.tsx:80
